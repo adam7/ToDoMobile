@@ -1,0 +1,7 @@
+/bin
+/obj
+/App_Data
+/TestResults
+*.user
+*.suo
+*.sln.cache

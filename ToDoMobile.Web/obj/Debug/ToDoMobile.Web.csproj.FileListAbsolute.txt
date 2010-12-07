@@ -1,0 +1,5 @@
+c:\users\adam cooper\documents\visual studio 2010\Projects\ToDoMobile\ToDoMobile.Web\bin\ToDoMobile.Web.dll
+c:\users\adam cooper\documents\visual studio 2010\Projects\ToDoMobile\ToDoMobile.Web\bin\ToDoMobile.Web.pdb
+c:\users\adam cooper\documents\visual studio 2010\Projects\ToDoMobile\ToDoMobile.Web\obj\Debug\ResolveAssemblyReference.cache
+c:\users\adam cooper\documents\visual studio 2010\Projects\ToDoMobile\ToDoMobile.Web\obj\Debug\ToDoMobile.Web.dll
+c:\users\adam cooper\documents\visual studio 2010\Projects\ToDoMobile\ToDoMobile.Web\obj\Debug\ToDoMobile.Web.pdb

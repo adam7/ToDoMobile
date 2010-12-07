@@ -1,0 +1,21 @@
+﻿@model IEnumerable<ToDoMobile.Web.Models.ToDoItem>
+
+@{
+    View.Title = "What you need ToDo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<ul data-role="listview">
+<li data-role="list-divider">Incomplete</li>
+@foreach (var item in Model.Where(todo => todo.Complete))
+{
+	<li><a href="">@item.Name</a><span class="ui-li-aside">Do this</span></li>	
+}
+<li data-role="list-divider">Completed</li>
+@foreach (var item in Model.Where(todo => !todo.Complete))
+{
+	<li><a href="">@item.Name</a><span class="ui-li-aside">Done this</span></li>	
+}
+</ul>
+
+
