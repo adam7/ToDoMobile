@@ -1,29 +1,26 @@
 ﻿@model ToDoMobile.Web.Models.ToDoItem
 @{
-	View.Title = "Create";
-	Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Create";
 }
-<h2>
-	Create</h2>
 @using (Html.BeginForm())
 {
-@Html.ValidationSummary(true)
-    <fieldset data-role="fieldcontain">
-			<div>
-				@Html.LabelFor(model => model.Name) @Html.ValidationMessageFor(model => model.Name)
-			</div>
-			<div>
-				@Html.EditorFor(model => model.Name)
-			</div>
-			<div>
-				@Html.LabelFor(model => model.Complete) @Html.ValidationMessageFor(model => model.Complete)
-			</div>
-			<div>
-				@Html.EditorFor(model => model.Complete)
-			</div>
-		</fieldset>
+	@Html.ValidationSummary(true)
+	<fieldset data-role="fieldcontain">
+		<div>
+			@Html.LabelFor(model => model.Name) @Html.ValidationMessageFor(model => model.Name)
+		</div>
+		<div>
+			@Html.EditorFor(model => model.Name)
+		</div>
+		<div>
+			@Html.LabelFor(model => model.Complete) @Html.ValidationMessageFor(model => model.Complete)
+		</div>
+		<div>
+			@Html.EditorFor(model => model.Complete)
+		</div>
+	</fieldset>
 	
-        <p>
-					<input type="submit" value="Create" />
-				</p>
-}
+	<p>
+		<input type="submit" value="Create" />
+	</p>
+} 

@@ -20,7 +20,7 @@ namespace ToDoMobile.Web
 			routes.MapRoute(
 					"Default", // Route name
 					"{controller}/{action}/{id}", // URL with parameters
-					new { controller = "ToDoItemController", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+					new { controller = "ToDoItem", action = "Index", id = UrlParameter.Optional } // Parameter defaults
 			);
 
 		}

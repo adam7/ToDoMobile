@@ -3,3 +3,7 @@ c:\users\adam cooper\documents\visual studio 2010\Projects\ToDoMobile\ToDoMobile
 c:\users\adam cooper\documents\visual studio 2010\Projects\ToDoMobile\ToDoMobile.Web\obj\Debug\ResolveAssemblyReference.cache
 c:\users\adam cooper\documents\visual studio 2010\Projects\ToDoMobile\ToDoMobile.Web\obj\Debug\ToDoMobile.Web.dll
 c:\users\adam cooper\documents\visual studio 2010\Projects\ToDoMobile\ToDoMobile.Web\obj\Debug\ToDoMobile.Web.pdb
+C:\Users\Adam Cooper\Documents\Visual Studio 2010\Projects\ToDoMobile\ToDoMobile.Web\bin\Newtonsoft.Json.dll
+C:\Users\Adam Cooper\Documents\Visual Studio 2010\Projects\ToDoMobile\ToDoMobile.Web\bin\Raven.Abstractions.dll
+C:\Users\Adam Cooper\Documents\Visual Studio 2010\Projects\ToDoMobile\ToDoMobile.Web\bin\Raven.Client.Lightweight.dll
+C:\Users\Adam Cooper\Documents\Visual Studio 2010\Projects\ToDoMobile\ToDoMobile.Web\bin\Raven.Client.Lightweight.xml
