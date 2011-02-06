@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
 using System.Web.Mvc;
 using ToDoMobile.Web.Models;
 
@@ -11,16 +11,9 @@ namespace ToDoMobile.Web.Controllers
 
 		public ActionResult Index()
 		{
-			IEnumerable<ToDoItem> items = new List<ToDoItem>
-					{
-						new ToDoItem { Id = "1", Name = "Test item 1", Complete = false },
-						new ToDoItem { Id = "2", Name = "Test item 2", Complete = true },
-						new ToDoItem { Id = "3", Name = "Test item 3", Complete = false },
-						new ToDoItem { Id = "4", Name = "Test item 4", Complete = false },
-						new ToDoItem { Id = "5", Name = "Test item 5", Complete = true },
-					};
+            var toDoItems = MvcApplication.CurrentSession.Query<ToDoItem>();
 
-			return View(items);
+			return View(toDoItems);
 		}
 
 		public ActionResult Details(string id)
@@ -28,76 +21,56 @@ namespace ToDoMobile.Web.Controllers
 			return View();
 		}
 
-		//
-		// GET: /ToDoItem/Create
-
+        [HttpGet]
 		public ActionResult Create()
 		{
 			return View();
 		}
 
-		//
-		// POST: /ToDoItem/Create
+		[HttpPost]
+		public ActionResult Create(ToDoItem toDoItem)
+		{
+            if(ModelState.IsValid)
+            {
+                MvcApplication.CurrentSession.Store(toDoItem);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
+		}
+
+        [HttpGet]
+		public ActionResult Edit(string id)
+		{
+			return View(MvcApplication.CurrentSession.Query<ToDoItem>().First(item => item.Id == id));
+		}
 
 		[HttpPost]
-		public ActionResult Create(FormCollection collection)
-		{
-			try
-			{
-				// TODO: Add insert logic here
-
-				return RedirectToAction("Index");
-			}
-			catch
-			{
-				return View();
-			}
-		}
-
-		//
-		// GET: /ToDoItem/Edit/5
-
-		public ActionResult Edit(int id)
-		{
-			return View();
-		}
-
-		//
-		// POST: /ToDoItem/Edit/5
-
-		[HttpPost]
-		public ActionResult Edit(int id, FormCollection collection)
-		{
-			try
-			{
-				// TODO: Add update logic here
-
-				return RedirectToAction("Index");
-			}
-			catch
-			{
-				return View();
-			}
-		}
-
-		//
-		// GET: /ToDoItem/Delete/5
+        public ActionResult Edit(ToDoItem toDoItem)
+        {
+            if (ModelState.IsValid)
+            {
+                MvcApplication.CurrentSession.Store(toDoItem);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View(toDoItem);
+            }
+        }
 
 		public ActionResult Delete(int id)
 		{
 			return View();
 		}
 
-		//
-		// POST: /ToDoItem/Delete/5
-
 		[HttpPost]
-		public ActionResult Delete(int id, FormCollection collection)
+		public ActionResult Delete(ToDoItem toDoItem)
 		{
 			try
 			{
-				// TODO: Add delete logic here
-
 				return RedirectToAction("Index");
 			}
 			catch

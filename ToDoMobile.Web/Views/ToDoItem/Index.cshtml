@@ -2,15 +2,15 @@
 @{
 	ViewBag.Title = "What you need ToDo";
 }
-<ul data-role="listview">
+<ul data-role="listview" data-inset="true"  >
 	<li data-role="list-divider">Incomplete</li>
-	@foreach (var item in Model.Where(todo => todo.Complete))
- {
-		<li><a href="">@item.Name</a><span class="ui-li-aside">Do this</span></li>	
- }
-	<li data-role="list-divider">Completed</li>
 	@foreach (var item in Model.Where(todo => !todo.Complete))
  {
-		<li><a href="">@item.Name</a><span class="ui-li-aside">Done this</span></li>	
+		<li><a href="/ToDoItem/Edit/@item.Id" rel="external">@item.Name<span class="ui-li-aside">Do this</span></a></li>	
+ }
+	<li data-role="list-divider">Completed</li>
+	@foreach (var item in Model.Where(todo => todo.Complete))
+ {
+		<li><a href="/ToDoItem/Edit/@item.Id" rel="external">@item.Name<span class="ui-li-aside">Done this</span></a></li>	
  }
 </ul>

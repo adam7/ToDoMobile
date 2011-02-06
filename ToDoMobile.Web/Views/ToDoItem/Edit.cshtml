@@ -1,34 +1,33 @@
 ﻿@model ToDoMobile.Web.Models.ToDoItem
 @{
-	ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit";
 }
-<h2>
-	Edit</h2>
 @using (Html.BeginForm())
 {
-	@Html.ValidationSummary(true)
-	<fieldset>
-		<legend>ToDoItem</legend>
-		@Html.HiddenFor(model => model.Id)
-		<div class="editor-label">
-			@Html.LabelFor(model => model.Name)
-		</div>
-		<div class="editor-field">
-			@Html.EditorFor(model => model.Name)
-			@Html.ValidationMessageFor(model => model.Name)
-		</div>
-		<div class="editor-label">
-			@Html.LabelFor(model => model.Complete)
-		</div>
-		<div class="editor-field">
-			@Html.EditorFor(model => model.Complete)
-			@Html.ValidationMessageFor(model => model.Complete)
-		</div>
-		<p>
-			<input type="submit" value="Save" />
-		</p>
-	</fieldset>
+    @Html.ValidationSummary(true)
+    <h1>@ViewBag.Title</h1>
+    <div class="ui-body">
+        <div data-role="fieldcontain">
+            @Html.LabelFor(model => model.Name)
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div data-role="fieldcontain">
+            <label for="priority">
+                Priority</label>
+            <input type="range" name="priority" id="priority" value="@Model.Priority" min="1" max="3" />
+        </div>
+        <div data-role="fieldcontain">
+            <label for="complete">
+                Complete</label>
+            <select name="complete" id="complete" data-role="slider">
+                <option value="false">Not done</option>
+                <option value="true" @(Model.Complete ? "selected='selected'" : "")>Done</option>
+            </select>
+        </div>
+    </div>
+    <div data-role="controlgroup" data-type="horizontal">
+        <input type="submit" value="Save" data-icon="arrow-r" />
+        <a href="/" data-role="button" data-icon="home">Cancel</a>
+    </div>
 }
-<div>
-	@Html.ActionLink("Back to List", "Index")
-</div>
