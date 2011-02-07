@@ -1,0 +1,12 @@
+{
+  "Name": "Temp/ToDos",
+  "Map": "from doc in docs.ToDos\r\nselect new {  }",
+  "Reduce": null,
+  "TransformResults": null,
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {},
+  "Indexes": {},
+  "SortOptions": {},
+  "Analyzers": {}
+}

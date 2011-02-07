@@ -83,11 +83,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\ToDoItemController.cs" />
+    <Compile Include="Controllers\ToDoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ToDoItem.cs" />
+    <Compile Include="Models\ToDo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -121,13 +121,13 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\ToDoItem\Create.cshtml" />
+    <Content Include="Views\ToDo\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\ToDoItem\Index.cshtml" />
+    <Content Include="Views\ToDo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\ToDoItem\Edit.cshtml" />
+    <Content Include="Views\ToDo\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

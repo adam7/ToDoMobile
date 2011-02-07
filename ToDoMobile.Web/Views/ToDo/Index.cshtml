@@ -1,0 +1,16 @@
+﻿@model IEnumerable<ToDoMobile.Web.Models.ToDo>
+@{
+	ViewBag.Title = "What you need to-do";
+}
+<ul data-role="listview" data-inset="true"  >
+	<li data-role="list-divider">Incomplete</li>
+	@foreach (var item in Model.Where(todo => !todo.Complete).OrderBy(todo => todo.Priority))
+ {
+		<li><a href="/ToDo/Edit/@item.Id" rel="external">@item.Name<span class="ui-li-aside">Not done</span></a></li>	
+ }
+	<li data-role="list-divider">Completed</li>
+	@foreach (var item in Model.Where(todo => todo.Complete))
+ {
+		<li><a href="/ToDo/Edit/@item.Id" rel="external">@item.Name<span class="ui-li-aside">Done</span></a></li>	
+ }
+</ul>
