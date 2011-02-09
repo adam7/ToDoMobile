@@ -22,7 +22,11 @@ namespace ToDoMobile.Web
             BeginRequest += (sender, args) => HttpContext.Current.Items[RavenSessionKey] = _documentStore.OpenSession();
             EndRequest += (o, eventArgs) =>
             {
-                CurrentSession.SaveChanges();
+                // If there aren't any errors save any document changes that have been made
+                if (Context.Error == null)
+                {
+                    CurrentSession.SaveChanges();
+                }
                 var disposable = HttpContext.Current.Items[RavenSessionKey] as IDisposable;
                 if (disposable != null)
                     disposable.Dispose();

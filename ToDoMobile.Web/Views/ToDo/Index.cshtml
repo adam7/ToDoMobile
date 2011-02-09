@@ -4,7 +4,7 @@
 }
 <ul data-role="listview" data-inset="true"  >
 	<li data-role="list-divider">Incomplete</li>
-	@foreach (var item in Model.Where(todo => !todo.Complete).OrderBy(todo => todo.Priority))
+	@foreach (var item in Model.Where(todo => !todo.Complete))
  {
 		<li><a href="/ToDo/Edit/@item.Id" rel="external">@item.Name</a></li>	
  }

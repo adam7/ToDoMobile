@@ -8,7 +8,7 @@ namespace ToDoMobile.Web.Controllers
 	{
         public ActionResult Index()
 		{
-            var toDoItems = MvcApplication.CurrentSession.Query<ToDo>();
+            var toDoItems = MvcApplication.CurrentSession.Query<ToDo>().OrderBy(todo => todo.Priority);
 
 			return View(toDoItems);
 		}
@@ -36,7 +36,7 @@ namespace ToDoMobile.Web.Controllers
         [HttpGet]
 		public ActionResult Edit(string id)
 		{
-			return View(MvcApplication.CurrentSession.Query<ToDo>().First(item => item.Id == id));
+			return View(MvcApplication.CurrentSession.Load<ToDo>(id));
 		}
 
 		[HttpPost]
