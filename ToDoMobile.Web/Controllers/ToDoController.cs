@@ -25,6 +25,7 @@ namespace ToDoMobile.Web.Controllers
             if(ModelState.IsValid)
             {
                 MvcApplication.CurrentSession.Store(toDoItem);
+                MvcApplication.CurrentSession.SaveChanges();
                 return RedirectToAction("Index");
             }
             else
@@ -45,6 +46,7 @@ namespace ToDoMobile.Web.Controllers
             if (ModelState.IsValid)
             {
                 MvcApplication.CurrentSession.Store(toDoItem);
+                MvcApplication.CurrentSession.SaveChanges();
                 return RedirectToAction("Index");
             }
             else

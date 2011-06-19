@@ -4,7 +4,7 @@
 }
 @using (Html.BeginForm())
 {
-    <div class="ui-body ui-body-a">
+    <div class="ui-body">
         <div data-role="fieldcontain">
             @Html.LabelFor(model => model.Name)
             @Html.EditorFor(model => model.Name)
@@ -18,6 +18,6 @@
     </div>
     <div data-role="controlgroup" data-type="horizontal">
         <input type="submit" value="Create" data-icon="plus" />
-        <a href="/" data-role="button" data-icon="home" rel="external">Cancel</a>
+        <a href="/" data-role="button" data-icon="home">Cancel</a>
     </div>
 }
